@@ -81,6 +81,7 @@ def checkCli(myConfig):
     newConfig = re.sub('bgp listen limit', 'dynamic peer max', newConfig)
     newConfig = re.sub('fall-over bfd', 'bfd', newConfig)
     newConfig = re.sub('inbound all', 'all', newConfig)
+    newConfig = re.sub('rib-in pre-policy retain all', 'rib-in pre-policy retain', newConfig)
     newConfig = re.sub('rib-in pre-policy retain inbound', 'rib-in pre-policy retain all', newConfig)
     newConfig = re.sub('soft-reconfiguration inbound', 'rib-in pre-policy retain all', newConfig)
     newConfig = re.sub('soft-reconfiguration', 'rib-in pre-policy retain', newConfig)
