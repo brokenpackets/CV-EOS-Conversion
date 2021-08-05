@@ -81,8 +81,10 @@ def checkCli(myConfig):
     newConfig = re.sub('bgp listen limit', 'dynamic peer max', newConfig)
     newConfig = re.sub('fall-over bfd', 'bfd', newConfig)
     newConfig = re.sub('inbound all', 'all', newConfig)
+    newConfig = re.sub('soft-reconfiguration inbound', 'rib-in pre-policy retain all', newConfig)
     newConfig = re.sub('soft-reconfiguration', 'rib-in pre-policy retain', newConfig)
     newConfig = re.sub('transport connection-mode', 'passive', newConfig)
+
 
 #
 # router ospf
@@ -124,7 +126,7 @@ def checkCli(myConfig):
     newConfig = re.sub('(vrrp [1-9]+) authentication', r'\1' + ' authentication', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) delay reload', r'\1' + ' timers delay reload', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) description', r'\1' + ' session description', newConfig)
-    newConfig = re.sub('(vrrp [1-9]+) ip', r'\1' + ' ipv4', newConfig)
+    newConfig = re.sub('(vrrp [1-9]+) ip ', r'\1' + 'ipv4', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) priority', r'\1' + ' priority-level', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) shutdown', r'\1' + ' disabled', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) timers advertise', r'\1' + ' advertisement interval', newConfig)
