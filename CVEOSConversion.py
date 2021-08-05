@@ -132,7 +132,7 @@ def checkCli(myConfig):
     newConfig = re.sub('(vrrp [1-9]+) description', r'\1' + ' session description', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) ip ', r'\1' + ' ipv4', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) priority-level-level', r'\1' + ' priority-level', newConfig)
-    newConfig = re.sub('(vrrp [1-9]+) priority', r'\1' + ' priority-level', newConfig)
+    newConfig = re.sub('(vrrp [1-9]+) priority ', r'\1' + ' priority-level ', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) shutdown', r'\1' + ' disabled', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) timers advertise', r'\1' + ' advertisement interval', newConfig)
     newConfig = re.sub('(vrrp [1-9]+) track', r'\1' + ' tracked-object', newConfig)
